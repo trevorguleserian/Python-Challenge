@@ -41,7 +41,7 @@ with open(csvpath) as csvfile:
 
 
 
-
+    
 
     
     print("Financial Analysis")
