@@ -57,11 +57,6 @@ with open(csvpath) as csvfile:
             Winner = "O'Tooley"
 
 
-
-
-
-
-
     print("Election Results")
     print("------------------")
     print(f"Total Votes: {Vote_tally}")
@@ -72,3 +67,20 @@ with open(csvpath) as csvfile:
     print(f"O'Tooley: {OTooleyPercentage} ({OTooleyTotal})")
     print("------------------")
     print(f"Winner: {Winner}")
+
+output_path = os.path.join("Analysis", "PyPoll_Analysis")
+with open(output_path, "w") as txtfile:
+    
+    Lines = ["Election Results\n","------------------\n"]
+    txtfile.writelines(Lines)
+    txtfile.write(f"Total Votes: {Vote_tally}\n")
+    txtfile.write("------------------\n")
+    txtfile.write(f"Khan: {KhanPercentage} ({KhanTotal})\n")
+    txtfile.write(f"Correy: {CorreyPercentage} ({CorreyTotal})\n")
+    txtfile.write(f"Li: {LiPercentage} ({LiTotal})\n")
+    txtfile.write(f"O'Tooley: {OTooleyPercentage} ({OTooleyTotal})\n")
+    txtfile.write("------------------\n")
+    txtfile.write(f"Winner: {Winner}\n")
+
+
+    

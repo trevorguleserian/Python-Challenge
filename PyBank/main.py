@@ -51,6 +51,17 @@ with open(csvpath) as csvfile:
     print(f"Average Change: {Average_Change}")
     print(f"Greatest increase in profits: {date[Max]} ({max(profit_month)})")
     print(f"Greatest increase in profits: {date[Min]} ({min(profit_month)})")
+
+    output_path = os.path.join("Analysis", "PyBank_Analysis")
+with open(output_path, "w") as txtfile:
+    
+    Lines = ["Financial Analysis\n","------------------\n"]
+    txtfile.writelines(Lines)
+    txtfile.write(f"Total Months: {Monthcount}\n")
+    txtfile.write(f"Total: {Profit_Losses}\n")
+    txtfile.write(f"Average Change: {Average_Change}\n")
+    txtfile.write(f"Greatest increase in profits: {date[Max]} ({max(profit_month)})\n")
+    txtfile.write(f"Greatest increase in profits: {date[Min]} ({min(profit_month)})\n")
     
     
     
